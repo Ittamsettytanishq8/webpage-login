@@ -4,76 +4,142 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Buy your Home</title>
-
-  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-
   <style>
-    /* [Styles remain unchanged for brevity] */
-    /* Assume all previous styles are retained here */
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: #f9f9f9;
+    }
+
+    .page-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+    }
+
+    .application-container {
+      background: #fff;
+      padding: 30px;
+      max-width: 500px;
+      width: 100%;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+    }
+
+    h2 {
+      font-family: 'Montserrat', sans-serif;
+      margin-bottom: 20px;
+      color: #2b2b2b;
+    }
+
+    .input-field {
+      margin-bottom: 15px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      margin-bottom: 5px;
+      font-weight: 500;
+    }
+
+    input, select, textarea {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 60px;
+    }
+
+    .submit-btn {
+      background: #007bff;
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 10px;
+      width: 100%;
+    }
+
+    .submit-btn:hover {
+      background: #0056b3;
+    }
+
+    .congrats-container {
+      display: none;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+      flex-direction: column;
+    }
+
+    .congrats-container h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: #28a745;
+    }
+
+    .congrats-container p {
+      font-size: 1.1rem;
+    }
   </style>
 </head>
 <body>
 
   <div class="page-wrapper" id="mainContent">
-
-    <div class="horizontal-section">
-      <!-- Form Panel -->
-      <div class="application-container">
-        <h2>Welcome to Tanishq Landmarks</h2>
-        <form id="appForm" novalidate>
-          <div class="input-field">
-            <label for="fullname" class="required">Full Name</label>
-            <input type="text" id="fullname" name="fullname" required placeholder="Enter your full name" />
-          </div>
-          <div class="input-field">
-            <label for="email" class="required">Email Address</label>
-            <input type="email" id="email" name="email" required placeholder="Enter your email" />
-          </div>
-          <div class="input-field">
-            <label for="phone" class="required">Phone Number</label>
-            <input type="tel" id="phone" name="phone" required placeholder="Enter your phone number" pattern="[0-9]{10}" />
-          </div>
-          <div class="input-field">
-            <label for="address">Address</label>
-            <textarea id="address" name="address" placeholder="Enter your address"></textarea>
-          </div>
-          <div class="input-field">
-            <label for="bedrooms" class="required">No of Bedrooms</label>
-            <select id="bedrooms" name="bedrooms" required>
-              <option value="" disabled selected>Choose your space</option>
-              <option value="1 BHK">1 BHK</option>
-              <option value="2 BHK">2 BHK</option>
-              <option value="3 BHK">3 BHK</option>
-              <option value="Other">Other</option>
-            </select>
-          </div>
-          <div class="input-field">
-            <label for="location" class="required">Select Location</label>
-            <select id="location" name="location" required>
-              <option value="" disabled selected>Select location</option>
-              <option value="Visakhapatnam">Visakhapatnam</option>
-              <option value="Mumbai">Mumbai</option>
-              <option value="Chennai">Chennai</option>
-              <option value="Pune">Pune</option>
-              <option value="Bangalore">Bangalore</option>
-              <option value="Delhi">Delhi</option>
-              <option value="Chandigarh">Chandigarh</option>
-              <option value="Others">Others</option>
-            </select>
-          </div>
-          <button type="submit" class="submit-btn">Submit</button>
-        </form>
-      </div>
-
-      <!-- Dashlets and Feedback Panel remain unchanged -->
-      <!-- Assume the rest of the HTML structure is retained here -->
-
+    <div class="application-container">
+      <h2>Welcome to Tanishq Landmarks</h2>
+      <form id="appForm" novalidate>
+        <div class="input-field">
+          <label for="fullname">Full Name</label>
+          <input type="text" id="fullname" name="fullname" required placeholder="Enter your full name" />
+        </div>
+        <div class="input-field">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" required placeholder="Enter your email" />
+        </div>
+        <div class="input-field">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" required placeholder="Enter your phone number" pattern="[0-9]{10}" />
+        </div>
+        <div class="input-field">
+          <label for="address">Address</label>
+          <textarea id="address" name="address" placeholder="Enter your address"></textarea>
+        </div>
+        <div class="input-field">
+          <label for="bedrooms">No of Bedrooms</label>
+          <select id="bedrooms" name="bedrooms" required>
+            <option value="" disabled selected>Choose your space</option>
+            <option value="1 BHK">1 BHK</option>
+            <option value="2 BHK">2 BHK</option>
+            <option value="3 BHK">3 BHK</option>
+          </select>
+        </div>
+        <div class="input-field">
+          <label for="location">Select Location</label>
+          <select id="location" name="location" required>
+            <option value="" disabled selected>Select location</option>
+            <option value="Visakhapatnam">Visakhapatnam</option>
+            <option value="Mumbai">Mumbai</option>
+            <option value="Chennai">Chennai</option>
+            <option value="Pune">Pune</option>
+          </select>
+        </div>
+        <button type="submit" class="submit-btn">Submit</button>
+      </form>
     </div>
-
   </div>
 
-  <!-- Congrats Section -->
   <div class="congrats-container" id="congratsMessage">
     <h1>Congratulations!</h1>
     <p id="confirmationText">Your dream home is just a few steps away. Our sales team will contact you within a few hours.</p>
@@ -88,18 +154,14 @@
 
       form.addEventListener('submit', function(e) {
         e.preventDefault();
-
-        // Simple form validation
         if (!form.checkValidity()) {
           form.reportValidity();
           return;
         }
 
-        // Personalize confirmation message
         const fullName = document.getElementById('fullname').value;
         confirmationText.textContent = `Thank you, ${fullName}! Your dream home is just a few steps away. Our sales team will contact you within a few hours.`;
 
-        // Display confirmation message
         mainContent.style.display = 'none';
         congratsMessage.style.display = 'flex';
       });
