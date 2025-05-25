@@ -31,7 +31,6 @@
       gap: 30px;
     }
 
-    /* FORM PANEL */
     .application-container {
       flex: none;
       width: 650px;
@@ -55,7 +54,6 @@
     .input-field label {
       display: block;
       margin-bottom: 6px;
-      font-family: 'Inter', sans-serif;
       font-weight: 500;
       color: #444;
       font-size: 16px;
@@ -76,8 +74,6 @@
       background: rgba(255,255,255,0.6);
       color: #000;
       transition: background 0.3s;
-      font-family: 'Inter', sans-serif;
-      font-weight: 400;
     }
     .input-field input:focus,
     .input-field textarea:focus,
@@ -106,7 +102,6 @@
       background-color: #005bb5;
     }
 
-    /* FEEDBACK PANEL */
     .feedback-container {
       flex: none;
       width: 350px;
@@ -129,9 +124,6 @@
       gap: 12px;
       margin-bottom: 20px;
     }
-    .feedback-item:last-child {
-      margin-bottom: 0;
-    }
     .feedback-item img {
       width: 50px;
       height: 50px;
@@ -140,27 +132,21 @@
       border: 2px solid #007bff;
     }
     .feedback-content .name {
-      font-family: 'Montserrat', sans-serif;
       font-weight: 600;
       color: #2c3e50;
       margin-bottom: 4px;
     }
     .stars span {
-      font-family: 'Inter', sans-serif;
-      font-weight: 400;
       color: gold;
       font-size: 14px;
       margin-right: 2px;
     }
     .feedback-content .comment {
-      font-family: 'Inter', sans-serif;
-      font-weight: 400;
       font-size: 14px;
       color: #555;
       line-height: 1.4;
     }
 
-    /* HIDDEN AT START: Congratulations message */
     .congrats-container {
       display: none;
       flex-direction: column;
@@ -168,6 +154,7 @@
       justify-content: center;
       text-align: center;
       padding: 40px;
+      height: 100vh;
       background: rgba(255,255,255,0.8);
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
@@ -188,7 +175,7 @@
 </head>
 <body>
 
-  <!-- MAIN CONTENT: Form + Feedback -->
+  <!-- Main content: Form + Feedback -->
   <div class="page-wrapper" id="mainContent">
 
     <!-- Form panel -->
@@ -239,7 +226,7 @@
       </form>
     </div>
 
-    <!-- Feedback panel with all items -->
+    <!-- Feedback panel -->
     <div class="feedback-container">
       <h3>Customer Feedback</h3>
 
@@ -247,12 +234,8 @@
         <img src="male-face-icon-default-profile-image--c3f2c592f9.jpg" alt="Alice Johnson">
         <div class="feedback-content">
           <div class="name">Alice Johnson</div>
-          <div class="stars">
-            <span>★</span><span>★</span><span>★</span><span>★</span><span>☆</span>
-          </div>
-          <div class="comment">
-            “Great service and friendly staff! The booking process was seamless.”
-          </div>
+          <div class="stars">★ ★ ★ ★ ☆</div>
+          <div class="comment">“Great service and friendly staff! The booking process was seamless.”</div>
         </div>
       </div>
 
@@ -260,12 +243,8 @@
         <img src="male-face-icon-default-profile-image--c3f2c592f9.jpg" alt="Rahul Mehta">
         <div class="feedback-content">
           <div class="name">Rahul Mehta</div>
-          <div class="stars">
-            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-          </div>
-          <div class="comment">
-            “Loved the property options. Highly recommend Tanishq landmarks!”
-          </div>
+          <div class="stars">★ ★ ★ ★ ★</div>
+          <div class="comment">“Loved the property options. Highly recommend Tanishq landmarks!”</div>
         </div>
       </div>
 
@@ -273,12 +252,8 @@
         <img src="female-face-icon-default-profile-image--c3f2c592f9.jpg" alt="Sara Lee">
         <div class="feedback-content">
           <div class="name">Sara Lee</div>
-          <div class="stars">
-            <span>★</span><span>★</span><span>★</span><span>☆</span><span>☆</span>
-          </div>
-          <div class="comment">
-            “Good selection but could improve customer support response time.”
-          </div>
+          <div class="stars">★ ★ ★ ☆ ☆</div>
+          <div class="comment">“Good selection but could improve customer support response time.”</div>
         </div>
       </div>
 
@@ -286,12 +261,8 @@
         <img src="female-face-icon-default-profile-image--c3f2c592f9.jpg" alt="Meera G">
         <div class="feedback-content">
           <div class="name">Meera G</div>
-          <div class="stars">
-            <span>★</span><span>★</span><span>★</span><span>☆</span><span>☆</span>
-          </div>
-          <div class="comment">
-            “Very helpful staff and great properties!”
-          </div>
+          <div class="stars">★ ★ ★ ☆ ☆</div>
+          <div class="comment">“Very helpful staff and great properties!”</div>
         </div>
       </div>
 
@@ -299,12 +270,8 @@
         <img src="female-face-icon-default-profile-image--c3f2c592f9.jpg" alt="Mrunal Singh">
         <div class="feedback-content">
           <div class="name">Mrunal Singh</div>
-          <div class="stars">
-            <span>★</span><span>★</span><span>★</span><span>★</span><span>☆</span>
-          </div>
-          <div class="comment">
-            “A smooth experience overall—would use again!”
-          </div>
+          <div class="stars">★ ★ ★ ★ ☆</div>
+          <div class="comment">“A smooth experience overall—would use again!”</div>
         </div>
       </div>
 
@@ -317,11 +284,17 @@
     <p>Your dream home is just a few steps away. Our sales team will contact you within a few hours.</p>
   </div>
 
+  <!-- JavaScript -->
   <script>
-    document.getElementById('appForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      document.getElementById('mainContent').style.display = 'none';
-      document.getElementById('congratsMessage').style.display = 'flex';
+    document.addEventListener('DOMContentLoaded', function () {
+      document.getElementById('appForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        document.getElementById('mainContent').style.display = 'none';
+        const congrats = document.getElementById('congratsMessage');
+        congrats.style.display = 'flex';
+        congrats.style.height = '100vh';
+      });
     });
   </script>
 </body>
