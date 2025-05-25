@@ -35,11 +35,11 @@
     .horizontal-section {
       display: flex;
       gap: 30px;
+      align-items: flex-start;
     }
 
     .application-container {
-      flex: none;
-      width: 650px;
+      flex: 0 0 600px;
       padding: 40px;
       border-radius: 12px;
       background-color: rgba(236,240,208,0.3);
@@ -119,12 +119,19 @@
 
     /* Dashlet styling */
     .dashlet {
-      width: 100%;
-      text-align: right;
-      padding: 10px 20px;
+      flex: 0 0 220px; /* fixed width */
+      display: flex;
+      justify-content: center;
+      align-items: center;
       background-color: rgba(255,255,255,0.9);
-      border-radius: 8px;
+      padding: 25px 20px;
+      border-radius: 12px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      height: fit-content;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 16px;
+      text-align: center;
     }
 
     .dashlet a {
@@ -139,8 +146,7 @@
     }
 
     .feedback-container {
-      flex: none;
-      width: 350px;
+      flex: 0 0 350px;
       max-height: 600px;
       padding: 20px;
       border-radius: 12px;
@@ -270,72 +276,71 @@
         </form>
       </div>
 
+      <!-- Dashlet between Form and Feedback -->
+      <div class="dashlet">
+        <a href="your-brochure-link.pdf" target="_blank">📄 Visit Our Brochure</a>
+      </div>
+
       <!-- Feedback Panel -->
       <div class="feedback-container">
         <h3>Customer Feedback</h3>
-        <!-- All feedback items go here -->
-        <!-- Add your existing feedback HTML here -->
+
         <div class="feedback-item">
-  <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Customer Image">
-  <div class="feedback-content">
-    <div class="name">Rahul Sharma</div>
-    <div class="stars">
-      <span>⭐️⭐️⭐️⭐️⭐️</span>
-    </div>
-    <div class="comment">Smooth process and quick possession. Highly recommended!</div>
-  </div>
-</div>
+          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Customer Image" />
+          <div class="feedback-content">
+            <div class="name">Rahul Sharma</div>
+            <div class="stars">
+              <span>⭐️⭐️⭐️⭐️⭐️</span>
+            </div>
+            <div class="comment">Smooth process and quick possession. Highly recommended!</div>
+          </div>
+        </div>
 
-<div class="feedback-item">
-  <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Customer Image">
-  <div class="feedback-content">
-    <div class="name">Priya Mehta</div>
-    <div class="stars">
-      <span>⭐️⭐️⭐️⭐️</span>
-    </div>
-    <div class="comment">Loved the location and design. Staff were very supportive.</div>
-  </div>
-</div>
+        <div class="feedback-item">
+          <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Customer Image" />
+          <div class="feedback-content">
+            <div class="name">Priya Mehta</div>
+            <div class="stars">
+              <span>⭐️⭐️⭐️⭐️</span>
+            </div>
+            <div class="comment">Loved the location and design. Staff were very supportive.</div>
+          </div>
+        </div>
 
-<div class="feedback-item">
-  <img src="https://randomuser.me/api/portraits/men/54.jpg" alt="Customer Image">
-  <div class="feedback-content">
-    <div class="name">Amit Verma</div>
-    <div class="stars">
-      <span>⭐️⭐️⭐️⭐️⭐️</span>
-    </div>
-    <div class="comment">Excellent experience buying our first home with Tanishq Landmarks.</div>
-  </div>
-</div>
+        <div class="feedback-item">
+          <img src="https://randomuser.me/api/portraits/men/54.jpg" alt="Customer Image" />
+          <div class="feedback-content">
+            <div class="name">Amit Verma</div>
+            <div class="stars">
+              <span>⭐️⭐️⭐️⭐️⭐️</span>
+            </div>
+            <div class="comment">Excellent experience buying our first home with Tanishq Landmarks.</div>
+          </div>
+        </div>
 
-<div class="feedback-item">
-  <img src="https://randomuser.me/api/portraits/women/33.jpg" alt="Customer Image">
-  <div class="feedback-content">
-    <div class="name">Sneha Reddy</div>
-    <div class="stars">
-      <span>⭐️⭐️⭐️⭐️⭐️</span>
-    </div>
-    <div class="comment">Got a great deal during the festival season. Totally worth it!</div>
-  </div>
-</div>
+        <div class="feedback-item">
+          <img src="https://randomuser.me/api/portraits/women/33.jpg" alt="Customer Image" />
+          <div class="feedback-content">
+            <div class="name">Sneha Reddy</div>
+            <div class="stars">
+              <span>⭐️⭐️⭐️⭐️⭐️</span>
+            </div>
+            <div class="comment">Got a great deal during the festival season. Totally worth it!</div>
+          </div>
+        </div>
 
-<div class="feedback-item">
-  <img src="https://randomuser.me/api/portraits/men/76.jpg" alt="Customer Image">
-  <div class="feedback-content">
-    <div class="name">Kunal Joshi</div>
-    <div class="stars">
-      <span>⭐️⭐️⭐️⭐️</span>
-    </div>
-    <div class="comment">Great customer support and transparent documentation.</div>
-  </div>
-</div>
+        <div class="feedback-item">
+          <img src="https://randomuser.me/api/portraits/men/76.jpg" alt="Customer Image" />
+          <div class="feedback-content">
+            <div class="name">Kunal Joshi</div>
+            <div class="stars">
+              <span>⭐️⭐️⭐️⭐️</span>
+            </div>
+            <div class="comment">Great customer support and transparent documentation.</div>
+          </div>
+        </div>
 
       </div>
-    </div>
-
-    <!-- Dashlet below form and feedback row -->
-    <div class="dashlet">
-      <a href="your-brochure-link.pdf" target="_blank">📄 Visit Our Brochure</a>
     </div>
 
   </div>
