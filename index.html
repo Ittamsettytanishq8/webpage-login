@@ -128,8 +128,19 @@
         <label for="address">Address</label>
         <textarea id="address" placeholder="Enter your address" required></textarea>
       </div>
-      <div class="input-field">
+       </select>
+      </div>
+         <div class="input-field">
         <label for="position">No of bedrooms</label>
+        <select id="position" required>
+          <option value="" disabled selected>Location</option>
+          <option value="developer">1 BHK</option>
+          <option value="designer">2 BHK</option>
+          <option value="manager">3 BHK</option>
+          <option value="other">Other</option>
+        </select>
+      <div class="input-field">
+        <label for="position">Select Location</label>
         <select id="position" required>
           <option value="" disabled selected>Select a position</option>
           <option value="1">Visakapatnam</option>
