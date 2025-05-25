@@ -47,7 +47,7 @@
       display: block;
       margin-bottom: 6px;
       color: #444;
-      font-size: 10px; /* Customized label size */
+      font-size: 16px; /* Customized label size */
       font-weight: 600;
     }
 
@@ -129,4 +129,24 @@
         <textarea id="address" placeholder="Enter your address" required></textarea>
       </div>
       <div class="input-field">
-        <label for="position">
+        <label for="position">Position Applying For</label>
+        <select id="position" required>
+          <option value="" disabled selected>Select a position</option>
+          <option value="developer">Developer</option>
+          <option value="designer">Designer</option>
+          <option value="manager">Manager</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+      <div class="input-field">
+        <label for="resume">Upload Resume</label>
+        <input type="file" id="resume" accept=".pdf,.doc,.docx" required />
+      </div>
+      <button type="submit" class="submit-btn">Submit Application</button>
+    </form>
+    <div class="footer-text">
+      Already applied? <a href="#">Check your application status</a>
+    </div>
+  </div>
+</body>
+</html>
