@@ -19,17 +19,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      /* Optional: a slight overlay to make form readable */
       position: relative;
-    }
-
-    /* Optional overlay to darken background for readability */
-    body::before {
-      content: "";
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(236, 240, 208, 0.8); /* same as form bg but with opacity */
-      z-index: 0;
     }
 
     .application-container {
@@ -39,8 +29,11 @@
       padding: 40px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
       border-radius: 12px;
-      background-color: #ecf0d0;
+      /* Semi-transparent white background */
+      background-color: rgba(236, 240, 208, 0.6);
       overflow-y: auto;
+      backdrop-filter: blur(8px); /* optional, adds nice blur effect behind */
+      -webkit-backdrop-filter: blur(8px);
     }
 
     .application-container h2 {
@@ -69,12 +62,14 @@
       outline: none;
       transition: border 0.3s;
       font-family: Arial, sans-serif;
+      background: rgba(255, 255, 255, 0.8);
     }
 
     .input-field input:focus,
     .input-field textarea:focus,
     .input-field select:focus {
       border-color: #007bff;
+      background: white;
     }
 
     textarea {
