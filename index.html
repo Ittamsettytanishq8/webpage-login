@@ -28,6 +28,12 @@
       max-width: 1200px;
       width: 100%;
       display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .horizontal-section {
+      display: flex;
       gap: 30px;
     }
 
@@ -111,6 +117,27 @@
       background-color: #005bb5;
     }
 
+    /* Dashlet styling */
+    .dashlet {
+      width: 100%;
+      text-align: right;
+      padding: 10px 20px;
+      background-color: rgba(255,255,255,0.9);
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .dashlet a {
+      text-decoration: none;
+      color: #007bff;
+      font-weight: 600;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .dashlet a:hover {
+      text-decoration: underline;
+    }
+
     .feedback-container {
       flex: none;
       width: 350px;
@@ -192,162 +219,133 @@
 </head>
 <body>
 
-  <!-- Main content: Form + Feedback -->
   <div class="page-wrapper" id="mainContent">
 
-    <!-- Form panel -->
-    <div class="application-container">
-      <h2>Welcome to Tanishq landmarks</h2>
-      <form id="appForm">
-        <div class="input-field">
-          <label for="fullname" class="required">Full Name</label>
-          <input type="text" id="fullname" required placeholder="Enter your full name" />
-        </div>
-        <div class="input-field">
-          <label for="email" class="required">Email Address</label>
-          <input type="email" id="email" required placeholder="Enter your email" />
-        </div>
-        <div class="input-field">
-          <label for="phone" class="required">Phone Number</label>
-          <input type="tel" id="phone" required placeholder="Enter your phone number" />
-        </div>
-        <div class="input-field">
-          <label for="address">Address</label>
-          <textarea id="address" placeholder="Enter your address"></textarea>
-        </div>
-        <div class="input-field">
-          <label for="bedrooms" class="required">No of Bedrooms</label>
-          <select id="bedrooms" required>
-            <option disabled selected>Choose your space</option>
-            <option>1 BHK</option>
-            <option>2 BHK</option>
-            <option>3 BHK</option>
-            <option>Other</option>
-          </select>
-        </div>
-        <div class="input-field">
-          <label for="location" class="required">Select Location</label>
-          <select id="location" required>
-            <option disabled selected>Select location</option>
-            <option>Visakhapatnam</option>
-            <option>Mumbai</option>
-            <option>Chennai</option>
-            <option>Pune</option>
-            <option>Bangalore</option>
-            <option>Delhi</option>
-            <option>Chandigarh</option>
-            <option>Others</option>
-          </select>
-        </div>
-        <button type="submit" class="submit-btn">Submit</button>
-      </form>
+    <div class="horizontal-section">
+      <!-- Form Panel -->
+      <div class="application-container">
+        <h2>Welcome to Tanishq landmarks</h2>
+        <form id="appForm">
+          <div class="input-field">
+            <label for="fullname" class="required">Full Name</label>
+            <input type="text" id="fullname" required placeholder="Enter your full name" />
+          </div>
+          <div class="input-field">
+            <label for="email" class="required">Email Address</label>
+            <input type="email" id="email" required placeholder="Enter your email" />
+          </div>
+          <div class="input-field">
+            <label for="phone" class="required">Phone Number</label>
+            <input type="tel" id="phone" required placeholder="Enter your phone number" />
+          </div>
+          <div class="input-field">
+            <label for="address">Address</label>
+            <textarea id="address" placeholder="Enter your address"></textarea>
+          </div>
+          <div class="input-field">
+            <label for="bedrooms" class="required">No of Bedrooms</label>
+            <select id="bedrooms" required>
+              <option disabled selected>Choose your space</option>
+              <option>1 BHK</option>
+              <option>2 BHK</option>
+              <option>3 BHK</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="input-field">
+            <label for="location" class="required">Select Location</label>
+            <select id="location" required>
+              <option disabled selected>Select location</option>
+              <option>Visakhapatnam</option>
+              <option>Mumbai</option>
+              <option>Chennai</option>
+              <option>Pune</option>
+              <option>Bangalore</option>
+              <option>Delhi</option>
+              <option>Chandigarh</option>
+              <option>Others</option>
+            </select>
+          </div>
+          <button type="submit" class="submit-btn">Submit</button>
+        </form>
+      </div>
+
+      <!-- Feedback Panel -->
+      <div class="feedback-container">
+        <h3>Customer Feedback</h3>
+        <!-- All feedback items go here -->
+        <!-- Add your existing feedback HTML here -->
+        <div class="feedback-item">
+  <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Customer Image">
+  <div class="feedback-content">
+    <div class="name">Rahul Sharma</div>
+    <div class="stars">
+      <span>⭐️⭐️⭐️⭐️⭐️</span>
+    </div>
+    <div class="comment">Smooth process and quick possession. Highly recommended!</div>
+  </div>
+</div>
+
+<div class="feedback-item">
+  <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Customer Image">
+  <div class="feedback-content">
+    <div class="name">Priya Mehta</div>
+    <div class="stars">
+      <span>⭐️⭐️⭐️⭐️</span>
+    </div>
+    <div class="comment">Loved the location and design. Staff were very supportive.</div>
+  </div>
+</div>
+
+<div class="feedback-item">
+  <img src="https://randomuser.me/api/portraits/men/54.jpg" alt="Customer Image">
+  <div class="feedback-content">
+    <div class="name">Amit Verma</div>
+    <div class="stars">
+      <span>⭐️⭐️⭐️⭐️⭐️</span>
+    </div>
+    <div class="comment">Excellent experience buying our first home with Tanishq Landmarks.</div>
+  </div>
+</div>
+
+<div class="feedback-item">
+  <img src="https://randomuser.me/api/portraits/women/33.jpg" alt="Customer Image">
+  <div class="feedback-content">
+    <div class="name">Sneha Reddy</div>
+    <div class="stars">
+      <span>⭐️⭐️⭐️⭐️⭐️</span>
+    </div>
+    <div class="comment">Got a great deal during the festival season. Totally worth it!</div>
+  </div>
+</div>
+
+<div class="feedback-item">
+  <img src="https://randomuser.me/api/portraits/men/76.jpg" alt="Customer Image">
+  <div class="feedback-content">
+    <div class="name">Kunal Joshi</div>
+    <div class="stars">
+      <span>⭐️⭐️⭐️⭐️</span>
+    </div>
+    <div class="comment">Great customer support and transparent documentation.</div>
+  </div>
+</div>
+
+      </div>
     </div>
 
-    <!-- Feedback panel -->
-    <div class="feedback-container">
-      <h3>Customer Feedback</h3>
-
-      <!-- Repeat feedback item below with different data -->
-      <div class="feedback-item">
-        <img src="male-face-icon-default-profile-image--c3f2c592f9.jpg" alt="Alice Johnson">
-        <div class="feedback-content">
-          <div class="name">Alice Johnson</div>
-          <div class="stars">★ ★ ★ ★ ☆</div>
-          <div class="comment">“Great service and friendly staff! The booking process was seamless.”</div>
-        </div>
-      </div>
-
-      <div class="feedback-item">
-        <img src="male-face-icon-default-profile-image--c3f2c592f9.jpg" alt="Rahul Mehta">
-        <div class="feedback-content">
-          <div class="name">Rahul Mehta</div>
-          <div class="stars">★ ★ ★ ★ ★</div>
-          <div class="comment">“Loved the property options. Highly recommend Tanishq landmarks!”</div>
-        </div>
-      </div>
-
-      <div class="feedback-item">
-        <img src="female-face-icon-default-profile-image--c3f2c592f9.jpg" alt="Sara Lee">
-        <div class="feedback-content">
-          <div class="name">Sara Lee</div>
-          <div class="stars">★ ★ ★ ☆ ☆</div>
-          <div class="comment">“Good selection but could improve customer support response time.”</div>
-        </div>
-      </div>
-
-      <div class="feedback-item">
-        <img src="female-face-icon-default-profile-image--c3f2c592f9.jpg" alt="Meera G">
-        <div class="feedback-content">
-          <div class="name">Meera G</div>
-          <div class="stars">★ ★ ★ ☆ ☆</div>
-          <div class="comment">“Very helpful staff and great properties!”</div>
-        </div>
-      </div>
-
-      <div class="feedback-item">
-        <img src="female-face-icon-default-profile-image--c3f2c592f9.jpg" alt="Mrunal Singh">
-        <div class="feedback-content">
-          <div class="name">Mrunal Singh</div>
-          <div class="stars">★ ★ ★ ★ ☆</div>
-          <div class="comment">“A smooth experience overall—would use again!”</div>
-        </div>
-      </div>
-
-      <div class="feedback-item">
-        <img src="male-face-icon-default-profile-image--c3f2c592f9.jpg" alt="Ravi Kumar">
-        <div class="feedback-content">
-          <div class="name">Ravi Kumar</div>
-          <div class="stars">★ ★ ★ ★ ★</div>
-          <div class="comment">“They helped me find a perfect 2BHK within my budget.”</div>
-        </div>
-      </div>
-
-      <div class="feedback-item">
-        <img src="female-face-icon-default-profile-image--c3f2c592f9.jpg" alt="Pooja Iyer">
-        <div class="feedback-content">
-          <div class="name">Pooja Iyer</div>
-          <div class="stars">★ ★ ★ ★ ☆</div>
-          <div class="comment">“Professional team and very responsive. Highly appreciated.”</div>
-        </div>
-      </div>
-
-      <div class="feedback-item">
-        <img src="male-face-icon-default-profile-image--c3f2c592f9.jpg" alt="Arjun Verma">
-        <div class="feedback-content">
-          <div class="name">Arjun Verma</div>
-          <div class="stars">★ ★ ★ ★ ★</div>
-          <div class="comment">“Found my dream home with their help. Thank you!”</div>
-        </div>
-      </div>
-
-      <div class="feedback-item">
-        <img src="female-face-icon-default-profile-image--c3f2c592f9.jpg" alt="Neha Sharma">
-        <div class="feedback-content">
-          <div class="name">Neha Sharma</div>
-          <div class="stars">★ ★ ★ ☆ ☆</div>
-          <div class="comment">“Could improve interior finishing suggestions, otherwise great!”</div>
-        </div>
-      </div>
-
-      <div class="feedback-item">
-        <img src="female-face-icon-default-profile-image--c3f2c592f9.jpg" alt="Ishita Roy">
-        <div class="feedback-content">
-          <div class="name">Ishita Roy</div>
-          <div class="stars">★ ★ ★ ★ ★</div>
-          <div class="comment">“The support team answered all my queries patiently.”</div>
-        </div>
-      </div>
-
+    <!-- Dashlet below form and feedback row -->
+    <div class="dashlet">
+      <a href="your-brochure-link.pdf" target="_blank">📄 Visit Our Brochure</a>
     </div>
+
   </div>
 
-  <!-- Congratulations message -->
+  <!-- Congrats Section -->
   <div class="congrats-container" id="congratsMessage">
     <h1>Congratulations!</h1>
     <p>Your dream home is just a few steps away. Our sales team will contact you within a few hours.</p>
   </div>
 
-  <!-- JavaScript -->
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       document.getElementById('appForm').addEventListener('submit', function(e) {
@@ -357,5 +355,6 @@
       });
     });
   </script>
+
 </body>
 </html>
