@@ -10,95 +10,157 @@
 
   <style>
     * { box-sizing: border-box; }
+
     body {
-      margin: 0; padding: 20px;
+      margin: 0;
+      padding: 20px;
       min-height: 100vh;
       font-family: 'Inter', sans-serif;
       background: url('Loginbackground.jpg') no-repeat center center fixed;
       background-size: cover;
-      display: flex; justify-content: center; align-items: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
-    .page-wrapper, .congrats-container {
-      max-width: 1200px; width: 100%;
-      display: flex; gap: 30px;
+    .page-wrapper,
+    .congrats-container {
+      max-width: 1200px;
+      width: 100%;
+      display: flex;
+      gap: 30px;
     }
 
     /* FORM PANEL */
     .application-container {
-      flex: none; width: 650px; padding: 40px;
-      border-radius: 12px; background-color: rgba(236,240,208,0.3);
+      flex: none;
+      width: 650px;
+      padding: 40px;
+      border-radius: 12px;
+      background-color: rgba(236,240,208,0.3);
       box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-      backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
     }
     .application-container h2 {
-      font-family: 'Montserrat',sans-serif; font-weight:600;
-      text-align:center; margin-bottom:24px; color:#333;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      text-align: center;
+      margin-bottom: 24px;
+      color: #333;
     }
-    .input-field { margin-bottom: 20px; }
+    .input-field {
+      margin-bottom: 20px;
+    }
     .input-field label {
-      display:block; margin-bottom:6px;
-      font-family:'Inter',sans-serif; font-weight:500;
-      color:#444; font-size:16px;
+      display: block;
+      margin-bottom: 6px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      color: #444;
+      font-size: 16px;
     }
     .input-field label.required::after {
-      content:" *"; color:red; margin-left:2px;
+      content: " *";
+      color: red;
+      margin-left: 2px;
     }
     .input-field input,
     .input-field textarea,
     .input-field select {
-      width:100%; padding:10px; border-radius:6px;
-      border:1px solid #ccc; outline:none;
-      background:rgba(255,255,255,0.6); color:#000;
-      transition:background .3s;
-      font-family:'Inter',sans-serif; font-weight:400;
+      width: 100%;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      outline: none;
+      background: rgba(255,255,255,0.6);
+      color: #000;
+      transition: background 0.3s;
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
     }
     .input-field input:focus,
     .input-field textarea:focus,
     .input-field select:focus {
-      background:rgba(255,255,255,0.85); border-color:#D3D3D3;
+      background: rgba(255,255,255,0.85);
+      border-color: #D3D3D3;
     }
-    textarea { resize:vertical; min-height:80px; }
+    textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
     .submit-btn {
-      width:100%; padding:12px; border:none; border-radius:6px;
-      background-color:#6599FF; color:#fff; font-size:16px;
-      font-family:'Montserrat',sans-serif; font-weight:700;
-      cursor:pointer; transition:background .3s;
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 6px;
+      background-color: #6599FF;
+      color: #fff;
+      font-size: 16px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.3s;
     }
-    .submit-btn:hover { background-color:#005bb5; }
+    .submit-btn:hover {
+      background-color: #005bb5;
+    }
 
     /* FEEDBACK PANEL */
     .feedback-container {
-      flex:none; width:350px; max-height:600px; padding:20px;
-      border-radius:12px; background-color:rgba(255,255,255,0.8);
-      box-shadow:0 4px 12px rgba(0,0,0,0.1); overflow-y:auto;
+      flex: none;
+      width: 350px;
+      max-height: 600px;
+      padding: 20px;
+      border-radius: 12px;
+      background-color: rgba(255,255,255,0.8);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      overflow-y: auto;
     }
     .feedback-container h3 {
-      font-family:'Montserrat',sans-serif; font-weight:600;
-      text-align:center; margin-top:0; margin-bottom:16px; color:#333;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      text-align: center;
+      margin: 0 0 16px;
+      color: #333;
     }
     .feedback-item {
-      display:flex; gap:12px; margin-bottom:20px;
+      display: flex;
+      gap: 12px;
+      margin-bottom: 20px;
     }
-    .feedback-item:last-child { margin-bottom:0; }
+    .feedback-item:last-child {
+      margin-bottom: 0;
+    }
     .feedback-item img {
-      width:50px; height:50px; border-radius:50%;
-      object-fit:cover; border:2px solid #007bff;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #007bff;
     }
     .feedback-content .name {
-      font-family:'Montserrat',sans-serif; font-weight:600;
-      color:#2c3e50; margin-bottom:4px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      color: #2c3e50;
+      margin-bottom: 4px;
     }
     .stars span {
-      font-family:'Inter',sans-serif; font-weight:400;
-      color:gold; font-size:14px; margin-right:2px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      color: gold;
+      font-size: 14px;
+      margin-right: 2px;
     }
     .feedback-content .comment {
-      font-family:'Inter',sans-serif; font-weight:400;
-      font-size:14px; color:#555; line-height:1.4;
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      font-size: 14px;
+      color: #555;
+      line-height: 1.4;
     }
 
-    /* HIDDEN AT START */
+    /* HIDDEN AT START: Congratulations message */
     .congrats-container {
       display: none;
       flex-direction: column;
@@ -109,7 +171,6 @@
       background: rgba(255,255,255,0.8);
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      max-width: 600px;
       font-family: 'Inter', sans-serif;
       color: #333;
     }
@@ -127,10 +188,10 @@
 </head>
 <body>
 
-  <!-- MAIN CONTENT -->
+  <!-- MAIN CONTENT: Form + Feedback -->
   <div class="page-wrapper" id="mainContent">
 
-    <!-- LEFT: Form -->
+    <!-- Form panel -->
     <div class="application-container">
       <h2>Welcome to Tanishq landmarks</h2>
       <form id="appForm">
@@ -178,31 +239,87 @@
       </form>
     </div>
 
-    <!-- RIGHT: Feedback -->
+    <!-- Feedback panel with all items -->
     <div class="feedback-container">
       <h3>Customer Feedback</h3>
-      <!-- feedback items omitted for brevity… same as before -->
+
       <div class="feedback-item">
-        <img src="male-face-icon-default-profile-image--c3f2c592f9.jpg" alt="">
+        <img src="male-face-icon-default-profile-image--c3f2c592f9.jpg" alt="Alice Johnson">
         <div class="feedback-content">
           <div class="name">Alice Johnson</div>
-          <div class="stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>☆</span></div>
-          <div class="comment">“Great service…”</div>
+          <div class="stars">
+            <span>★</span><span>★</span><span>★</span><span>★</span><span>☆</span>
+          </div>
+          <div class="comment">
+            “Great service and friendly staff! The booking process was seamless.”
+          </div>
         </div>
       </div>
-      <!-- …other items… -->
+
+      <div class="feedback-item">
+        <img src="male-face-icon-default-profile-image--c3f2c592f9.jpg" alt="Rahul Mehta">
+        <div class="feedback-content">
+          <div class="name">Rahul Mehta</div>
+          <div class="stars">
+            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+          </div>
+          <div class="comment">
+            “Loved the property options. Highly recommend Tanishq landmarks!”
+          </div>
+        </div>
+      </div>
+
+      <div class="feedback-item">
+        <img src="female-face-icon-default-profile-image--c3f2c592f9.jpg" alt="Sara Lee">
+        <div class="feedback-content">
+          <div class="name">Sara Lee</div>
+          <div class="stars">
+            <span>★</span><span>★</span><span>★</span><span>☆</span><span>☆</span>
+          </div>
+          <div class="comment">
+            “Good selection but could improve customer support response time.”
+          </div>
+        </div>
+      </div>
+
+      <div class="feedback-item">
+        <img src="female-face-icon-default-profile-image--c3f2c592f9.jpg" alt="Meera G">
+        <div class="feedback-content">
+          <div class="name">Meera G</div>
+          <div class="stars">
+            <span>★</span><span>★</span><span>★</span><span>☆</span><span>☆</span>
+          </div>
+          <div class="comment">
+            “Very helpful staff and great properties!”
+          </div>
+        </div>
+      </div>
+
+      <div class="feedback-item">
+        <img src="female-face-icon-default-profile-image--c3f2c592f9.jpg" alt="Mrunal Singh">
+        <div class="feedback-content">
+          <div class="name">Mrunal Singh</div>
+          <div class="stars">
+            <span>★</span><span>★</span><span>★</span><span>★</span><span>☆</span>
+          </div>
+          <div class="comment">
+            “A smooth experience overall—would use again!”
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 
-  <!-- CONGRATULATIONS MESSAGE -->
+  <!-- Congratulations message -->
   <div class="congrats-container" id="congratsMessage">
     <h1>Congratulations!</h1>
-    <p>Way to youur dream house is just few steps away..we will contact our sales person will contact your with in few hours </p>
+    <p>Your dream home is just a few steps away. Our sales team will contact you within a few hours.</p>
   </div>
 
   <script>
     document.getElementById('appForm').addEventListener('submit', function(e) {
-      e.preventDefault();                 // stop actual submit
+      e.preventDefault();
       document.getElementById('mainContent').style.display = 'none';
       document.getElementById('congratsMessage').style.display = 'flex';
     });
