@@ -47,7 +47,7 @@
       display: block;
       margin-bottom: 6px;
       color: #444;
-      font-size: 16px; /* Customized label size */
+      font-size: 16px;
       font-weight: 600;
     }
 
@@ -128,32 +128,35 @@
         <label for="address">Address</label>
         <textarea id="address" placeholder="Enter your address" required></textarea>
       </div>
-       </select>
-      </div>
-         <div class="input-field">
-        <label for="position">No of bedrooms</label>
-        <select id="position" required>
+      <div class="input-field">
+        <label for="bedrooms">No of Bedrooms</label>
+        <select id="bedrooms" required>
           <option value="" disabled selected>Choose your space</option>
-          <option value="developer">1 BHK</option>
-          <option value="designer">2 BHK</option>
-          <option value="manager">3 BHK</option>
+          <option value="1bhk">1 BHK</option>
+          <option value="2bhk">2 BHK</option>
+          <option value="3bhk">3 BHK</option>
           <option value="other">Other</option>
         </select>
+      </div>
       <div class="input-field">
-        <label for="position">Select Location</label>
-        <select id="position" required>
+        <label for="location">Select Location</label>
+        <select id="location" required>
           <option value="" disabled selected>Select location</option>
-          <option value="1">Visakapatnam</option>
-          <option value="2">Mumbai</option>
-          <option value="3">Chennai</option>
-          <option value="4">Pune</option>
-          <option value="5">Banglore</option>
-          <option value="6">Delhi</option>
-          <option value="7">Chandigarh</option>
-          <option value="8">Others</option>
+          <option value="visakhapatnam">Visakhapatnam</option>
+          <option value="mumbai">Mumbai</option>
+          <option value="chennai">Chennai</option>
+          <option value="pune">Pune</option>
+          <option value="bangalore">Bangalore</option>
+          <option value="delhi">Delhi</option>
+          <option value="chandigarh">Chandigarh</option>
+          <option value="others">Others</option>
         </select>
       </div>
-           <button type="submit" class="submit-btn">Submit Application</button>
+      <div class="input-field">
+        <label for="resume">Upload Resume</label>
+        <input type="file" id="resume" accept=".pdf,.doc,.docx" required />
+      </div>
+      <button type="submit" class="submit-btn">Submit Application</button>
     </form>
     <div class="footer-text">
       Already applied? <a href="#">Check your application status</a>
