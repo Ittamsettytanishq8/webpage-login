@@ -90,8 +90,16 @@
 
 
  .input-field {
-  position: relative;
   margin-bottom: 28px;
+}
+
+.input-field label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+  color: #333;
+  font-weight: 500;
+  font-family: 'Inter', sans-serif;
 }
 
 .input-field input,
@@ -115,29 +123,6 @@
   outline: none;
 }
 
-.input-field label {
-  position: absolute;
-  top: 12px;
-  left: 14px;
-  font-size: 14px;
-  color: #888;
-  background: rgba(255,255,255,0.9);
-  padding: 0 6px;
-  transition: 0.2s ease all;
-  pointer-events: none;
-}
-
-.input-field input:focus + label,
-.input-field input:not(:placeholder-shown) + label,
-.input-field select:focus + label,
-.input-field select:not([value=""]) + label,
-.input-field textarea:focus + label,
-.input-field textarea:not(:placeholder-shown) + label {
-  top: -10px;
-  left: 10px;
-  font-size: 12px;
-  color: #6599FF;
-}
 
 
 .submit-btn {
