@@ -317,8 +317,6 @@
 }
 
   </style>
-  <script src="https://unpkg.com/lottie-web@5.9.4/build/player/lottie.min.js"></script>
-
 </head>
 <body>
 
@@ -331,9 +329,6 @@
 		<div class="progress-bar">
   Step 1 of 3: Buyer Details
 </div>
-<!-- Add inside .application-container before <form> -->
-<div id="animatedPerson" style="width: 260px; height: 260px; margin: 0 auto 30px;"></div>
-
         <form id="appForm">
           <div class="input-field">
             <label for="fullname" class="required">Full Name</label>
@@ -497,15 +492,6 @@
       });
     });
   </script>
-<script>
-  lottie.loadAnimation({
-    container: document.getElementById('animatedPerson'),
-    renderer: 'svg',
-    loop: true,
-    autoplay: true,
-    path: 'https://assets2.lottiefiles.com/packages/lf20_UJNc2t.json' // Real estate character animation
-  });
-</script>
 
 </body>
 </html>
