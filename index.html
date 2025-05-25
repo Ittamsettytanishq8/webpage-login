@@ -9,7 +9,6 @@
       box-sizing: border-box;
       font-family: Arial, sans-serif;
     }
-
     body {
       margin: 0;
       padding: 0;
@@ -20,7 +19,6 @@
       justify-content: center;
       align-items: center;
     }
-
     .application-container {
       position: relative;
       z-index: 1;
@@ -32,17 +30,20 @@
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
     }
-
     .application-container h2 {
       text-align: center;
       margin-bottom: 24px;
       color: #333;
     }
-
     .input-field {
       margin-bottom: 20px;
     }
-
+    /* mark required labels */
+    .input-field label.required::after {
+      content: " *";
+      color: red;
+      margin-left: 2px;
+    }
     .input-field label {
       display: block;
       margin-bottom: 6px;
@@ -50,7 +51,6 @@
       font-size: 16px;
       font-weight: 600;
     }
-
     .input-field input,
     .input-field textarea,
     .input-field select {
@@ -62,19 +62,16 @@
       background: rgba(255, 255, 255, 0.6);
       color: #000;
     }
-
     .input-field input:focus,
     .input-field textarea:focus,
     .input-field select:focus {
       border-color: #007bff;
       background: rgba(255, 255, 255, 0.85);
     }
-
     textarea {
       resize: vertical;
       min-height: 80px;
     }
-
     .submit-btn {
       width: 100%;
       padding: 12px;
@@ -86,23 +83,19 @@
       cursor: pointer;
       transition: background 0.3s;
     }
-
     .submit-btn:hover {
       background-color: #005bb5;
     }
-
     .footer-text {
       margin-top: 20px;
       text-align: center;
       color: #333;
       font-size: 14px;
     }
-
     a {
       color: #007bff;
       text-decoration: none;
     }
-
     a:hover {
       text-decoration: underline;
     }
@@ -113,23 +106,23 @@
     <h2>Welcome to Tanishq landmarks</h2>
     <form>
       <div class="input-field">
-        <label for="fullname">Full Name</label>
+        <label for="fullname" class="required">Full Name</label>
         <input type="text" id="fullname" placeholder="Enter your full name" required />
       </div>
       <div class="input-field">
-        <label for="email">Email Address</label>
-        <input type="email" id="email" placeholder="Enter your email" />
+        <label for="email" class="required">Email Address</label>
+        <input type="email" id="email" placeholder="Enter your email" required />
       </div>
       <div class="input-field">
-        <label for="phone">Phone Number</label>
+        <label for="phone" class="required">Phone Number</label>
         <input type="tel" id="phone" placeholder="Enter your phone number" required />
       </div>
       <div class="input-field">
-        <label for="address">Address</label>
-        <textarea id="address" placeholder="Enter your address"></textarea>
+        <label for="address" class="required">Address</label>
+        <textarea id="address" placeholder="Enter your address" required></textarea>
       </div>
       <div class="input-field">
-        <label for="bedrooms">No of Bedrooms</label>
+        <label for="bedrooms" class="required">No of Bedrooms</label>
         <select id="bedrooms" required>
           <option value="" disabled selected>Choose your space</option>
           <option value="1bhk">1 BHK</option>
@@ -139,7 +132,7 @@
         </select>
       </div>
       <div class="input-field">
-        <label for="location">Select Location</label>
+        <label for="location" class="required">Select Location</label>
         <select id="location" required>
           <option value="" disabled selected>Select location</option>
           <option value="visakhapatnam">Visakhapatnam</option>
@@ -153,7 +146,7 @@
         </select>
       </div>
       <div class="input-field">
-        <label for="resume">Upload Resume</label>
+        <label for="resume" class="required">Upload Resume</label>
         <input type="file" id="resume" accept=".pdf,.doc,.docx" required />
       </div>
       <button type="submit" class="submit-btn">Submit Application</button>
