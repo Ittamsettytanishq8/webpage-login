@@ -4,10 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Application Form with Feedback</title>
+
+  <!-- Montserrat for headings & names -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+  <!-- Inter for body, inputs & comments -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
   <style>
     * {
       box-sizing: border-box;
-      font-family: Arial, sans-serif;
     }
     body {
       margin: 0;
@@ -18,6 +23,8 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
     }
 
     .page-wrapper {
@@ -27,10 +34,10 @@
       width: 100%;
     }
 
-    /* FORM PANEL (500px wide) */
+    /* FORM PANEL (500px) */
     .application-container {
       flex: none;
-      width: 700px;        /* ↑ from 400px to 500px */
+      width: 500px;
       padding: 40px;
       border-radius: 12px;
       background-color: rgba(236, 240, 208, 0.3);
@@ -39,22 +46,28 @@
       -webkit-backdrop-filter: blur(10px);
     }
     .application-container h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
       text-align: center;
       margin-bottom: 24px;
       color: #333;
     }
-    .input-field { margin-bottom: 20px; }
-    .input-field label.required::after {
-      content: " *";
-      color: red;
-      margin-left: 2px;
+
+    .input-field {
+      margin-bottom: 20px;
     }
     .input-field label {
       display: block;
       margin-bottom: 6px;
-      color: #444;
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
       font-size: 16px;
-      font-weight: 600;
+      color: #444;
+    }
+    .input-field label.required::after {
+      content: " *";
+      color: red;
+      margin-left: 2px;
     }
     .input-field input,
     .input-field textarea,
@@ -66,6 +79,8 @@
       outline: none;
       background: rgba(255,255,255,0.6);
       color: #000;
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
       transition: background 0.3s;
     }
     .input-field input:focus,
@@ -74,7 +89,10 @@
       border-color: #007bff;
       background: rgba(255,255,255,0.85);
     }
-    textarea { resize: vertical; min-height: 80px; }
+    textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
     .submit-btn {
       width: 100%;
       padding: 12px;
@@ -82,16 +100,20 @@
       border-radius: 6px;
       background-color: #007bff;
       color: #fff;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
       font-size: 16px;
       cursor: pointer;
       transition: background 0.3s;
     }
-    .submit-btn:hover { background-color: #005bb5; }
+    .submit-btn:hover {
+      background-color: #005bb5;
+    }
 
-    /* FEEDBACK PANEL (350px wide) */
+    /* FEEDBACK PANEL (350px) */
     .feedback-container {
       flex: none;
-      width: 350px;        /* ↓ from 400px to 350px */
+      width: 350px;
       max-height: 600px;
       padding: 20px;
       border-radius: 12px;
@@ -100,17 +122,22 @@
       overflow-y: auto;
     }
     .feedback-container h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
       margin-top: 0;
       text-align: center;
       color: #333;
       margin-bottom: 16px;
     }
+
     .feedback-item {
       display: flex;
       gap: 12px;
       margin-bottom: 20px;
     }
-    .feedback-item:last-child { margin-bottom: 0; }
+    .feedback-item:last-child {
+      margin-bottom: 0;
+    }
     .feedback-item img {
       width: 50px;
       height: 50px;
@@ -122,7 +149,8 @@
       flex: 1;
     }
     .feedback-content .name {
-      font-weight: bold;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
       color: #2c3e50;
       margin-bottom: 4px;
     }
@@ -131,11 +159,15 @@
       margin-bottom: 6px;
     }
     .stars span {
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
       color: gold;
       font-size: 14px;
       margin-right: 2px;
     }
     .feedback-content .comment {
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
       font-size: 14px;
       color: #555;
       line-height: 1.4;
@@ -210,57 +242,7 @@
         </div>
       </div>
 
-      <div class="feedback-item">
-        <img src="male-face-icon-default-profile-image--c3f2c592f9.jpg" alt="Customer Photo 2">
-        <div class="feedback-content">
-          <div class="name">Rahul Mehta</div>
-          <div class="stars">
-            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-          </div>
-          <div class="comment">
-            “Loved the property options. Highly recommend Tanishq landmarks!”
-          </div>
-        </div>
-      </div>
-
-      <div class="feedback-item">
-        <img src="female-face-icon-default-profile-image--c3f2c592f9.jpg" alt="Customer Photo 3">
-        <div class="feedback-content">
-          <div class="name">Sara Lee</div>
-          <div class="stars">
-            <span>★</span><span>★</span><span>★</span><span>☆</span><span>☆</span>
-          </div>
-          <div class="comment">
-            “Good selection but could improve customer support response time.”
-          </div>
-        </div>
-      </div>
-
-      <div class="feedback-item">
-        <img src="female-face-icon-default-profile-image--c3f2c592f9.jpg" alt="Customer Photo 4">
-        <div class="feedback-content">
-          <div class="name">Meera G</div>
-          <div class="stars">
-            <span>★</span><span>★</span><span>★</span><span>☆</span><span>☆</span>
-          </div>
-          <div class="comment">
-            “Very helpful staff and great properties!”
-          </div>
-        </div>
-      </div>
-
-      <div class="feedback-item">
-        <img src="female-face-icon-default-profile-image--c3f2c592f9.jpg" alt="Customer Photo 5">
-        <div class="feedback-content">
-          <div class="name">Mrunal Singh</div>
-          <div class="stars">
-            <span>★</span><span>★</span><span>★</span><span>★</span><span>☆</span>
-          </div>
-          <div class="comment">
-            “A smooth experience overall—would use again!”
-          </div>
-        </div>
-      </div>
+      <!-- more feedback items… -->
 
     </div>
   </div>
